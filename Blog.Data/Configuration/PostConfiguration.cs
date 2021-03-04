@@ -14,8 +14,8 @@ namespace Blog.Data.Configuration
             builder.ToTable("Posts");
             builder.HasKey(x => x.PostID);
             builder.Property(x => x.PostID).UseIdentityColumn();
-            builder.Property(x => x.Title).HasMaxLength(30);
-            builder.Property(x => x.Content).HasMaxLength(50);
+            builder.Property(x => x.Title).HasMaxLength(30).IsRequired();
+            builder.Property(x => x.Content).HasMaxLength(50).IsRequired();
             builder.Property(x => x.DateCreated).HasDefaultValue(DateTime.Now);
             builder.HasOne(x => x.User).WithMany(x => x.Posts).HasForeignKey(x => x.UserID);
         }

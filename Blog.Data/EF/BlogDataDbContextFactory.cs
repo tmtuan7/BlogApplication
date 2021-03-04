@@ -17,7 +17,7 @@ namespace Blog.Data.EF
                             .AddJsonFile("appsettings.json")
                             .Build();
 
-            var connectionString = configuration.GetConnectionString("BlodDB");
+            var connectionString = configuration.GetConnectionString("BlogDB");
 
             var optionsBuilder = new DbContextOptionsBuilder<BlogDataDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
