@@ -16,7 +16,7 @@ namespace Blog.Data.Model
         public int UserID { get; set; }
         public User User { get; set; }
 
-        public List<Image> Images { get; set; }
+        public List<ImagePost> Images { get; set; }
 
         public List<Comment> Comments { get; set; }
 

@@ -11,7 +11,13 @@ namespace Blog.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            
+            builder.ToTable("Users");
+            builder.HasKey(x => x.UserID);
+            builder.Property(x => x.UserID).UseIdentityColumn();
+            builder.Property(x=>x.UserName).HasMaxLength(20).UseIdentityColumn().IsUnicode(false);
+            builder.Property(x => x.Password).HasMaxLength(30).IsUnicode(false);
+            builder.Property(x => x.DateCreated).HasDefaultValue(DateTime.Now);
+
         }
     }
 }

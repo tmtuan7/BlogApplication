@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Blog.Data.Model
 {
-    public class Image
+    public class ImagePost
     {
         public int ImageID { get; set; }
         public string ImageStream { get; set; }
